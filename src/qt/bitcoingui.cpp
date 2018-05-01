@@ -133,7 +133,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     createContractAction(0),
     sendToContractAction(0),
     callContractAction(0),
-    QRCTokenAction(0),
+    RRCTokenAction(0),
     sendTokenAction(0),
     receiveTokenAction(0),
     addTokenAction(0),
@@ -380,12 +380,12 @@ void BitcoinGUI::createActions()
     historyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(historyAction);
 
-    QRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/qrctoken"), tr("&QRC Tokens"), this);
-    QRCTokenAction->setStatusTip(tr("QRC Tokens (send, receive or add Tokens in list)"));
-    QRCTokenAction->setToolTip(QRCTokenAction->statusTip());
-    QRCTokenAction->setCheckable(true);
-    QRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
-    tabGroup->addAction(QRCTokenAction);
+    RRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/rrctoken"), tr("&RRC Tokens"), this);
+    RRCTokenAction->setStatusTip(tr("RRC Tokens (send, receive or add Tokens in list)"));
+    RRCTokenAction->setToolTip(RRCTokenAction->statusTip());
+    RRCTokenAction->setCheckable(true);
+    RRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+    tabGroup->addAction(RRCTokenAction);
 
     sendTokenAction = new QAction(tr("Send"), this);
     receiveTokenAction = new QAction(tr("Receive"), this);
@@ -575,7 +575,7 @@ void BitcoinGUI::createToolBars()
         tokenActions.append(sendTokenAction);
         tokenActions.append(receiveTokenAction);
         tokenActions.append(addTokenAction);
-        appNavigationBar->mapGroup(QRCTokenAction, tokenActions);
+        appNavigationBar->mapGroup(RRCTokenAction, tokenActions);
         appNavigationBar->buildUi();
         overviewAction->setChecked(true);
     }
@@ -827,21 +827,21 @@ void BitcoinGUI::gotoHistoryPage()
 void BitcoinGUI::gotoSendTokenPage()
 {
     sendTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    RRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendTokenPage();
 }
 
 void BitcoinGUI::gotoReceiveTokenPage()
 {
     receiveTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    RRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoReceiveTokenPage();
 }
 
 void BitcoinGUI::gotoAddTokenPage()
 {
     addTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    RRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoAddTokenPage();
 }
 

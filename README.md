@@ -68,7 +68,7 @@ Recrypt Core is our primary mainnet wallet. It implements a full node and is cap
 Recrypt Core currently implements the following:
 
 * Sending/Receiving Recrypt
-* Sending/Receiving QRC20 tokens on the Recrypt network
+* Sending/Receiving RRC20 tokens on the Recrypt network
 * Staking and creating blocks for the Recrypt network
 * Creating and interacting with smart contracts
 * Running a full node for distributing the blockchain to other users
